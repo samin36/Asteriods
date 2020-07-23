@@ -56,6 +56,7 @@ class Ship {
     for (int a = 0; a < asteriods.size(); a++) {
       Asteriod curr = asteriods.get(a);
       if (hit(curr)) {
+        explosions.add(new Explosions(new PVector(curr.pos.x, curr.pos.y), curr.maxRadius));
         asteriods.remove(curr);
         reset(null);
         break;
